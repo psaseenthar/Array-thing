@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+	<title>Array thing</title>
+</head>
+<body>
+	<button onclick="arrayEntry()"><h1>Click here to enter five items!</h1></button>
+	<br>
+	<br>
+	<button onclick="arrayReturn()">Click here to return an item!</button>
+	<br>
+	<br>
+	<button onclick="arrayReset()">Click here to remove your five items.</button>
+	<script>
+	var array = [];
+	var index = 0;
+	function arrayEntry() {
+		for (var i = 1; i <= 5; i++) {
+			array.push(prompt("Give me item # " + i + "!"));
+		}
+	}
+
+	function arrayReturn() {
+		if (array[index] != null) {
+			index = parseInt(prompt("Enter an item number to return!"));
+			alert("You picked item number " + index + ": " + array[index - 1]);
+		} else {
+			alert("You haven't entered anything!");
+		}
+	}
+
+	function arrayReset() {
+		array = [];
+		alert("Items removed!");
+	}
+	</script>
+</body>
